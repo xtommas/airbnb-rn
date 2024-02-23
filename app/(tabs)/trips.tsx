@@ -1,12 +1,12 @@
 import { View, Text } from "react-native";
 import React from "react";
 
-const Wishlist = () => {
+const Trips = () => {
   return (
     <View>
-      <Text>Wishlist</Text>
+      <Text>Trips</Text>
     </View>
   );
 };
 
-export default Wishlist;
+export default Trips;
