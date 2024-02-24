@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tabs } from 'expo-router'
 import Colors from '@/constants/Colors'
-import { FontAwesome5, FontAwesome6, Ionicons } from '@expo/vector-icons'
+import { FontAwesome6, Ionicons } from '@expo/vector-icons'
 
 const Layout = () => {
   return (
