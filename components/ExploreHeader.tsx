@@ -14,24 +14,12 @@ import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 const categories = [
   {
-    name: "Tiny homes",
-    icon: "home",
-  },
-  {
     name: "Cabins",
     icon: "house-siding",
   },
   {
-    name: "Trending",
-    icon: "local-fire-department",
-  },
-  {
-    name: "Play",
-    icon: "videogame-asset",
-  },
-  {
-    name: "City",
-    icon: "apartment",
+    name: "Rooms",
+    icon: "bed",
   },
   {
     name: "Beachfront",
@@ -40,6 +28,18 @@ const categories = [
   {
     name: "Countryside",
     icon: "nature-people",
+  },
+  {
+    name: "City",
+    icon: "apartment",
+  },
+  {
+    name: "Trending",
+    icon: "local-fire-department",
+  },
+  {
+    name: "Play",
+    icon: "videogame-asset",
   },
 ];
 

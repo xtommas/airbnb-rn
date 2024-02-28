@@ -12,15 +12,13 @@ const Explore = () => {
     setCategory(category);
   };
   return (
-    <View>
-      <View style={{ flex: 1, marginTop: 130 }}>
-        <Stack.Screen
-          options={{
-            header: () => <ExploreHeader onCategoryChanged={onDataChanged} />,
-          }}
-        />
-        <Listings listings={items} category={category} />
-      </View>
+    <View style={{ flex: 1, marginTop: 97 }}>
+      <Stack.Screen
+        options={{
+          header: () => <ExploreHeader onCategoryChanged={onDataChanged} />,
+        }}
+      />
+      <Listings listings={items} category={category} />
     </View>
   );
 };
