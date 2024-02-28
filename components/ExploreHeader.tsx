@@ -14,12 +14,12 @@ import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 
 const categories = [
   {
-    name: "Cabins",
-    icon: "house-siding",
-  },
-  {
     name: "Rooms",
     icon: "bed",
+  },
+  {
+    name: "Cabins",
+    icon: "house-siding",
   },
   {
     name: "Beachfront",
