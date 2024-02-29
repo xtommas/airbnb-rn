@@ -117,8 +117,12 @@ const Page = () => {
             {listing.room_type} in {listing.smart_location}
           </Text>
           <Text style={styles.rooms}>
-            {listing.guests_included} guests · {listing.bedrooms} bedrooms ·{" "}
-            {listing.beds} bed · {listing.bathrooms} bathrooms
+            {listing.guests_included}{" "}
+            {listing.guests_included === 1 ? "guest" : "guests"} ·{" "}
+            {listing.bedrooms} {listing.bedrooms === 1 ? "bedroom" : "bedrooms"}{" "}
+            · {listing.beds} {listing.beds === 1 ? "bed" : "beds"} ·{" "}
+            {listing.bathrooms}{" "}
+            {listing.bathrooms === 1 ? "bathroom" : "bathrooms"}
           </Text>
           <View style={{ flexDirection: "row", gap: 4 }}>
             <Ionicons name="star" size={16} />
