@@ -1,5 +1,5 @@
 import { View, StyleSheet, Text } from "react-native";
-import React from "react";
+import React, { memo } from "react";
 import { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import { defaultStyles } from "@/constants/Styles";
 import { ListingGeo } from "@/interfaces/listingGeo";
@@ -17,7 +17,7 @@ const INITIAL_REGION = {
   longitudeDelta: 9,
 };
 
-const ListingsMap = ({ listings }: Props) => {
+const ListingsMap = memo(({ listings }: Props) => {
   const router = useRouter();
 
   const onMarkerSelected = (item: ListingGeo) => {
@@ -59,7 +59,6 @@ const ListingsMap = ({ listings }: Props) => {
         style={StyleSheet.absoluteFill}
         provider={PROVIDER_GOOGLE}
         showsUserLocation
-        showsMyLocationButton
         initialRegion={INITIAL_REGION}
         clusterColor="#fff"
         clusterTextColor="black"
@@ -83,7 +82,7 @@ const ListingsMap = ({ listings }: Props) => {
       </MapView>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

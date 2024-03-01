@@ -1,20 +1,37 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  ListRenderItem,
+} from "react-native";
 import React, { useEffect, useRef, useState } from "react";
-import { FlashList, ListRenderItem } from "@shopify/flash-list";
 import { defaultStyles } from "@/constants/Styles";
 import { Link } from "expo-router";
 import { Listing } from "@/interfaces/listing";
 import { FontAwesome6, Ionicons } from "@expo/vector-icons";
 import Animated, { FadeInRight, FadeOutLeft } from "react-native-reanimated";
+import {
+  BottomSheetFlatList,
+  BottomSheetFlatListMethods,
+} from "@gorhom/bottom-sheet";
 
 interface Props {
   listings: any[];
   category: string;
+  refresh: number;
 }
 
-const Listings = ({ listings: items, category }: Props) => {
+const Listings = ({ listings: items, category, refresh }: Props) => {
   const [loading, setLoading] = useState(false);
-  const listRef = useRef<FlashList<any>>(null);
+  const listRef = useRef<BottomSheetFlatListMethods>(null);
+
+  useEffect(() => {
+    if (refresh) {
+      listRef.current?.scrollToOffset({ offset: 0, animated: true });
+    }
+  }, [refresh]);
 
   useEffect(() => {
     setLoading(true);
@@ -24,7 +41,7 @@ const Listings = ({ listings: items, category }: Props) => {
     }, 200);
   }, [category]);
 
-  const renderRow: ListRenderItem<Listing> = ({ item }) => (
+  const renderRow: ListRenderItem<any> = ({ item }) => (
     <Link href={`/listing/${item.id}`} asChild>
       <TouchableOpacity>
         <Animated.View
@@ -72,11 +89,13 @@ const Listings = ({ listings: items, category }: Props) => {
 
   return (
     <View style={defaultStyles.container}>
-      <FlashList
+      <BottomSheetFlatList
         renderItem={renderRow}
         data={loading ? [] : items}
-        estimatedItemSize={16}
         ref={listRef}
+        ListHeaderComponent={
+          <Text style={styles.info}>{items.length} homes</Text>
+        }
       />
     </View>
   );
@@ -92,6 +111,12 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 300,
     borderRadius: 10,
+  },
+  info: {
+    textAlign: "center",
+    fontFamily: "mon-sb",
+    fontSize: 16,
+    marginTop: 4,
   },
 });
 
