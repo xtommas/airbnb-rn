@@ -17,13 +17,13 @@ Features:
 
 # 📸 Screenshots
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px">
-    <img src="./screenshots/1.PNG" style="width: calc(33.33% - 10px);">
-    <img src="./screenshots/2.PNG" style="width: calc(33.33% - 10px);">
-    <img src="./screenshots/3.PNG" style="width: calc(33.33% - 10px);">
-    <img src="./screenshots/4.PNG" style="width: calc(33.33% - 10px);">
-    <img src="./screenshots/5.PNG" style="width: calc(33.33% - 10px);">
-    <img src="./screenshots/6.PNG" style="width: calc(33.33% - 10px);">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 20px;">
+    <img src="./screenshots/1.PNG" style="width: calc(33.33% - 10px); max-width: 200px;">
+    <img src="./screenshots/2.PNG" style="width: calc(33.33% - 10px); max-width: 200px;">
+    <img src="./screenshots/3.PNG" style="width: calc(33.33% - 10px); max-width: 200px;">
+    <img src="./screenshots/4.PNG" style="width: calc(33.33% - 10px); max-width: 200px;">
+    <img src="./screenshots/5.PNG" style="width: calc(33.33% - 10px); max-width: 200px;">
+    <img src="./screenshots/6.PNG" style="width: calc(33.33% - 10px); max-width: 200px;">
 </div>
 
 # ⚙️ How to Run
