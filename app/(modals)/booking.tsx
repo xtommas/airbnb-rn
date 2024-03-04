@@ -59,6 +59,7 @@ const Booking = () => {
   const onClearAll = () => {
     setSelectedPlace(0);
     setOpenCard(0);
+    setGroups(guestsGroups);
   };
 
   return (
